@@ -156,7 +156,7 @@ export default class Events extends Component {
             this.state.isBusy ? "current-status busy" : "current-status open"
           }
         >
-          <h1>{this.state.isBusy ? "BUSY" : "OPEN"}</h1>
+          <h1>{this.state.isBusy ? "Your Late Get to Class" : "No classes, relax and make sure your on top of your work"}</h1>
         </div>
         <div className="upcoming-meetings">
           <div className="current-time">{time}, 2020</div>
