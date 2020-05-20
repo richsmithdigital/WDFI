@@ -60,9 +60,13 @@ function Menu(props) {
             {" "}
             <Link to="/checkin"> Checkin </Link>{" "}
           </StyledLi>
-          <StyledLi active={location.pathname === "/Calendar_home"}>
+          <StyledLi active={location.pathname === "/CalendarHome"}>
             {" "}
-            <Link to="/Calendar_home"> Calendar </Link>{" "}
+            <Link to="/CalendarHome"> Calendar </Link>{" "}
+          </StyledLi>
+          <StyledLi active={location.pathname === "/Schedule"}>
+          {" "}
+            <Link to="/Schedule"> Schedule </Link>{" "}
           </StyledLi>
         </ul>
       </StyledNav>

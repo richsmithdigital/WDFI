@@ -12,6 +12,8 @@ import Checkin from "./Views/Checkin";
 import Profile from "./Views/Profile";
 import Login from "./Views/Login";
 import CalendarHome from "./Views/CalendarHome";
+import Schedule from "./Views/Schedule";
+
 
 import useAuth from "./services/firebase/useAuth";
 import useCheckin from "./services/firebase/useCheckin";
@@ -153,6 +155,9 @@ function App() {
             </Protected>
             <Protected authenticated={isAuthenticated} path="/calendarhome">
               <CalendarHome createCheckin={createCheckin} user={user} />
+            </Protected>
+            <Protected authenticated={isAuthenticated} path="/Schedule">
+              <Schedule createCheckin={createCheckin} user={user} />
             </Protected>
           </Switch>
         </div>
