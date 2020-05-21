@@ -4,6 +4,7 @@ import welcomeImage from "../assets/welcome.svg";
 import spinner from "../assets/spinner.svg";
 import { gapi } from 'gapi-script';
 import { GOOGLE_API_KEY, CALENDAR_ID } from "../config/API_config";
+import styled from "styled-components";
 
 
 
@@ -156,11 +157,11 @@ export default class Events extends Component {
             this.state.isBusy ? "current-status busy" : "current-status open"
           }
         >
-          <h1>{this.state.isBusy ? "Your Late Get to Class" : "No classes, relax and make sure your on top of your work"}</h1>
+          <h1>{this.state.isBusy ? "Your Late Get to Class!" : "No classes, relax and make sure your on top of your work"}</h1>
         </div>
-        <div className="upcoming-meetings">
+        <div className="upcoming-lessons">
           <div className="current-time">{time}, 2020</div>
-          <h1>Upcoming Meetings</h1>
+          <h1>Upcoming Lessons</h1>
           <div className="list-group">
             {this.state.isLoading && loadingState}
             {events.length > 0 && eventsList}

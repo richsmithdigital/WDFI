@@ -8,7 +8,7 @@ function Button(props) {
     
   const StyledButton = styled.button`
     height: 44.63px;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, #ff9d14 0%, #ffce4f 100%);
     border-radius: 22px;
     color: white;
     display: flex;
@@ -17,6 +17,7 @@ function Button(props) {
     cursor: pointer;
     width: 100%;
     margin-top: 6%;
+    box-shadow: 5px 2.5px 2.5px #000;
     border: none;
   `;
 

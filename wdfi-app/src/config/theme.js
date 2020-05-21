@@ -5,6 +5,13 @@ const theme = {
     grey: "#E9E9EC",
     green: "#6FCF97",
     darkGreen: "#256C43",
+    red: "#e42f2b",
+    lightred: "#ff6855",
+    darkred: "#aa0001",
+    yellow: "#ff9d14",
+    lightyellow: "#ffce4f",
+    darkyellow: "#c66e00",
+    
     darkShade: {
       100: "rgba(31, 32, 65, 100)",
       75: "rgba(31, 32, 65, 0.75)",

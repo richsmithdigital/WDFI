@@ -11,6 +11,8 @@ justify-content: center;
 align-items: center;
 min-height: 100vh;
 min-width: 100vw;
+background-color: #e42f2b;
+
 `;
 
 const StyledTile = styled(Tile)`
@@ -19,6 +21,9 @@ grid-template-columns: repeat(1, 1fr);
 justify-content: center;
 grid-row-gap: 20px;
 width: 100%;
+background-color: white;
+border-radius: 20px 20px 20px 20px;
+box-shadow: 10px 5px 5px #000;
 @media (min-width: 600px) {
   width: 30%;
 }
@@ -27,10 +32,11 @@ width: 100%;
 const StyledHeading = styled.h2`
 text-align: center;
 margin-top: 2%;
-color: ${({ theme }) => theme.colors.purple};
+color: ${({ theme }) => theme.colors.red};
 `;
 const StyledLink = styled(Link)`
 text-align: center;
+color: ${({ theme }) => theme.colors.yellow};
 `;
 
 
@@ -60,8 +66,7 @@ function Join(props) {
   return (
     <StyledWrapper>
       <StyledTile>
-        <StyledHeading>Get Started</StyledHeading>
-        <StyledHeading>Join With </StyledHeading>
+        <StyledHeading>Sign up With </StyledHeading>
         <Form onSocialLogin={handleSocialLogin} onSubmit={handleSubmit} serverError={error} />
         <StyledLink to="/login"> Already a member - Login </StyledLink>
       </StyledTile>

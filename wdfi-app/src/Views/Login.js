@@ -11,26 +11,41 @@ const StyledWrapper = styled.div`
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
+  background-color: #e42f2b;
 `;
 
 const StyledTile = styled(Tile)`
   display: grid;
+  background-color: white;
   grid-template-columns: repeat(1, 1fr);
   justify-content: center;
   grid-row-gap: 20px;
   width: 100%;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 10px 5px 5px #000;
   @media (min-width: 600px) {
     width: 30%;
   }
 `;
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   text-align: center;
   margin-top: 2%;
-  color: ${({ theme }) => theme.colors.purple};
+  color: ${({ theme }) => theme.colors.red};
+
+`;
+
+const StyledHeading2 = styled.h3`
+  text-align: center;
+  margin-top: 2%;
+  color: ${({ theme }) => theme.colors.yellow};
+
 `;
 const StyledLink = styled(Link)`
   text-align: center;
+  color: ${({ theme }) => theme.colors.yellow};
+
+
 `;
 
 function Login(props) {
@@ -63,7 +78,8 @@ function Login(props) {
           onSubmit={handleSubmit}
           buttonText="LOGIN"
         />
-        <StyledLink to="/join"> Not a member - Join </StyledLink>
+        <StyledHeading2>First Time?</StyledHeading2>
+        <StyledLink to="/join"> Click here to set up your Solent Calendar </StyledLink>
       </StyledTile>
     </StyledWrapper>
   );
