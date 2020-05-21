@@ -71,7 +71,7 @@ function Login(props) {
   return (
     <StyledWrapper>
       <StyledTile>
-        <StyledHeading>Login With </StyledHeading>
+        <StyledHeading>Login With Google </StyledHeading>
         <Form
           onSocialLogin={handleSocialLogin}
           serverError={error}

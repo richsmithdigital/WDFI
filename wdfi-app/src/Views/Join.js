@@ -29,7 +29,7 @@ box-shadow: 10px 5px 5px #000;
 }
 `;
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
 text-align: center;
 margin-top: 2%;
 color: ${({ theme }) => theme.colors.red};
@@ -39,7 +39,11 @@ text-align: center;
 color: ${({ theme }) => theme.colors.yellow};
 `;
 
-
+const StyledHeading2 = styled.h3`
+  text-align: center;
+  margin-top: 2%;
+  color: ${({ theme }) => theme.colors.yellow};
+  `;
 
 function Join(props) {
 
@@ -66,9 +70,10 @@ function Join(props) {
   return (
     <StyledWrapper>
       <StyledTile>
-        <StyledHeading>Sign up With </StyledHeading>
+        <StyledHeading>Sign up With Google</StyledHeading>
         <Form onSocialLogin={handleSocialLogin} onSubmit={handleSubmit} serverError={error} />
-        <StyledLink to="/login"> Already a member - Login </StyledLink>
+        <StyledHeading2>Already A member?</StyledHeading2>
+        <StyledLink to="/login"> Login Here </StyledLink>
       </StyledTile>
     </StyledWrapper>
   );

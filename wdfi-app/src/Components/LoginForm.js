@@ -5,8 +5,8 @@ import ErrorLabel from "../Components/ErrorLabel"
 import styled from "styled-components";
 import { SocialIcon } from "react-social-icons";
 import { useForm } from 'react-hook-form';
-
 import * as yup from 'yup';
+
 const StyledHeading = styled.h2`
     text-align: center;
     margin-top: 2%;
@@ -62,18 +62,16 @@ function LoginForm(props) {
          
           <form onSubmit={handleSubmit(handleInnerSubmit)}>
           <p>
-            <label> Email   </label>
           </p>
           <p>
-            <input type="text" name="email" style={errorBorder(errors.email)} ref={register}/>
+            <input type="text" name="email" placeholder="Email" style={errorBorder(errors.email)} ref={register}/>
             <ErrorLabel> {errors.email && errors.email.message} </ErrorLabel>
          
           </p>
           
-            <label> Password </label>
       
           <p>
-            <input type="password" name="password" ref={register} style={errorBorder(errors.password)} />
+            <input type="password" name="password" placeholder="Password" ref={register} style={errorBorder(errors.password)} />
             <ErrorLabel> {errors.password && errors.password.message} </ErrorLabel>
           </p>
          

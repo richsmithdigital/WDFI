@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import ClipLoader from "react-spinners/FadeLoader";
+import spinner from "../assets/spinner.svg";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -14,13 +15,10 @@ const StyledWrapper = styled.div`
 const  Loader = () => {
     return (
         <StyledWrapper>
-            <ClipLoader
-                    size={50}
-                    color={"#95A2FB"}
-                    loading={true}
-            />
+
             <div>
-            <p>loading ...</p>
+            <h1>loading ...</h1>
+            <img src={spinner} alt="Loading..." />
             </div>
        
        
