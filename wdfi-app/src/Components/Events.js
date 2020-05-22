@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
-import welcomeImage from "../assets/welcome.svg";
+import schools_out from "../assets/schools_out.jpeg";
 import spinner from "../assets/spinner.svg";
 import { gapi } from 'gapi-script';
 import { GOOGLE_API_KEY, CALENDAR_ID } from "../config/API_config";
@@ -17,7 +17,7 @@ background-color: white;
 border-radius: 20px 20px 20px 20px;
 box-shadow: 10px 5px 5px #000;
 @media (min-width: 600px) {
-  width: 30%;
+  width: 50%;
 }
 `;
 
@@ -152,11 +152,7 @@ export default class Events extends Component {
 
     let emptyState = (
       <div className="empty">
-        <img src={welcomeImage} alt="Welcome" />
-        <h3>
-          No meetings are scheduled for the day. Create one by clicking the
-          button below.
-        </h3>
+        <img src={schools_out} alt="Welcome" />
       </div>
     );
 
@@ -176,21 +172,27 @@ export default class Events extends Component {
         >
           <h1>{this.state.isBusy ? "Your Late Get to Class!" : "No classes, relax and make sure your on top of your work"}</h1>
         </div>
+        <br></br>
         <div className="upcoming-lessons">
           <div className="current-time">{time}, 2020</div>
-          <h1>Upcoming Lessons</h1>
+          <br></br>
+
+          <h1>Upcoming Lessons:</h1>
+          <br></br>
+
           <div className="list-group">
             {this.state.isLoading && loadingState}
             {events.length > 0 && eventsList}
             {this.state.isEmpty && emptyState}
           </div>
+          <br></br>
 
           <a
             className="primary-cta"
             href="https://calendar.google.com/calendar/embed?src=j7jsvjjgafhbq5blmi6llvoeng%40group.calendar.google.com&ctz=Europe%2FLondon"
             target="_blank"
           >
-            +
+                      <h2>Add a new event here</h2>
           </a>
         </div>
       </div>
