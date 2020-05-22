@@ -5,8 +5,21 @@ import spinner from "../assets/spinner.svg";
 import { gapi } from 'gapi-script';
 import { GOOGLE_API_KEY, CALENDAR_ID } from "../config/API_config";
 import styled from "styled-components";
+import Tile from "../Components/Tile";
 
-
+const StyledTile = styled(Tile)`
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+justify-content: center;
+grid-row-gap: 20px;
+width: 100%;
+background-color: white;
+border-radius: 20px 20px 20px 20px;
+box-shadow: 10px 5px 5px #000;
+@media (min-width: 600px) {
+  width: 30%;
+}
+`;
 
 export default class Events extends Component {
   constructor(props) {
@@ -37,7 +50,8 @@ export default class Events extends Component {
         .init({
           apiKey: GOOGLE_API_KEY
         })
-        .then(function() {
+        .then(function () {
+
           return gapi.client.request({
             path: `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?maxResults=11&orderBy=updated&timeMin=${moment().toISOString()}&timeMax=${moment()
               .endOf("day")
@@ -47,7 +61,7 @@ export default class Events extends Component {
         .then(
           response => {
             let events = response.result.items;
-            let sortedEvents = events.sort(function(a, b) {
+            let sortedEvents = events.sort(function (a, b) {
               return (
                 moment(b.start.dateTime).format("YYYYMMDD") -
                 moment(a.start.dateTime).format("YYYYMMDD")
@@ -72,7 +86,7 @@ export default class Events extends Component {
               });
             }
           },
-          function(reason) {
+          function (reason) {
             console.log(reason);
           }
         );
@@ -113,24 +127,26 @@ export default class Events extends Component {
   render() {
     const { time, events } = this.state;
 
-    let eventsList = events.map(function(event) {
+    let eventsList = events.map(function (event) {
       return (
-        <a
-          className="list-group-item"
-          href={event.htmlLink}
-          target="_blank"
-          key={event.id}
-        >
-          {event.summary}{" "}
-          <span className="badge">
-            {moment(event.start.dateTime).format("h:mm a")},{" "}
-            {moment(event.end.dateTime).diff(
-              moment(event.start.dateTime),
-              "minutes"
-            )}{" "}
+
+          <a
+            className="list-group-item"
+            href={event.htmlLink}
+            target="_blank"
+            key={event.id}
+          >
+            {event.summary}{" "}
+            <span className="badge">
+              {moment(event.start.dateTime).format("h:mm a")},{" "}
+              {moment(event.end.dateTime).diff(
+                moment(event.start.dateTime),
+                "minutes"
+              )}{" "}
             minutes, {moment(event.start.dateTime).format("MMMM Do")}{" "}
-          </span>
-        </a>
+            </span>
+          </a>
+
       );
     });
 
@@ -151,6 +167,7 @@ export default class Events extends Component {
     );
 
     return (
+      <StyledTile>
       <div className="container">
         <div
           className={
@@ -167,6 +184,7 @@ export default class Events extends Component {
             {events.length > 0 && eventsList}
             {this.state.isEmpty && emptyState}
           </div>
+
           <a
             className="primary-cta"
             href="https://calendar.google.com/calendar/embed?src=j7jsvjjgafhbq5blmi6llvoeng%40group.calendar.google.com&ctz=Europe%2FLondon"
@@ -176,6 +194,8 @@ export default class Events extends Component {
           </a>
         </div>
       </div>
+      </StyledTile>
+
     );
   }
 }
