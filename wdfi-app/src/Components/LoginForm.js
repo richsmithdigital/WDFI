@@ -10,7 +10,7 @@ import * as yup from 'yup';
 const StyledHeading = styled.h2`
     text-align: center;
     margin-top: 2%;
-    color: ${({ theme }) => theme.colors.purple};
+    color: ${({ theme }) => theme.colors.red};
   `;
 
   const StyledSocialIconArea = styled.div`

@@ -10,6 +10,8 @@ const StyledWrapper = styled.div`
   min-height: 100vh;
   min-width: 100vw;
   flex-direction: column;
+  background-color: #e42f2b;
+
 }`
 
 const  Loader = () => {

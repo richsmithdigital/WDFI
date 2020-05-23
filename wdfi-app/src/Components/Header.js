@@ -15,6 +15,7 @@ const StyledNav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
+
   }
 `;
 
@@ -23,6 +24,7 @@ const StyledLi = styled.li`
   cursor: pointer;
   width: 100%;
   text-align: center;
+  text-colour: red;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -37,6 +39,7 @@ const StyledClosedText = styled.p`
   margin-bottom: 15%;
   font-size: 18px;
   cursor: pointer;
+
 `;
 
 function Menu(props) {
@@ -114,7 +117,7 @@ transition: all 0.5s ease-in-out;
 transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
 height: 100vh;
 width: 304px;
-background: linear-gradient(180deg, #6fcf9d 0%, #67d2e8 100%);
+background: linear-gradient(180deg, #ff9d14 0%, #ffce4f 100%);
 position: absolute;
 padding-top: 1%;
 top: 0;

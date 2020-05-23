@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import FileUploader from "react-firebase-file-uploader";
 import firebase from "firebase";
+import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+import ProfileInfo from "../Components/ProfileInfo"
 
- 
+
+
+
 class Profile extends Component {
   state = {
     username: "",
@@ -54,13 +59,14 @@ class Profile extends Component {
             onUploadSuccess={this.handleUploadSuccess}
             onProgress={this.handleProgress}
           />
+          <br>
+          </br>
         </form>
+        <ProfileInfo></ProfileInfo>
       </div>
     );
   }
 }
- 
-
 
 
 export default Profile

@@ -13,7 +13,7 @@ background-color: white;
 border-radius: 20px 20px 20px 20px;
 box-shadow: 10px 5px 5px #000;
 @media (min-width: 600px) {
-  width: 50%;
+  width: 80%;
 }
 `;
 
