@@ -1,10 +1,14 @@
 import React from 'react';
 import Calendar from "../Components/Calendar"; 
 import styled from "styled-components";
+
 const StyledWrapper = styled.div`
-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100;
 min-height: 100vh;
-min-width: 100vw;
+
 background-color: #e42f2b;
 
 `;

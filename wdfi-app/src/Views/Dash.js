@@ -1,49 +1,36 @@
-import React, {useEffect, useState} from "react";
-import PropTypes from "prop-types";
-import DaysCompleted from "../Components/DaysCompleted";
-import CheckinComment from "../Components/CheckinComment";
+import React from 'react';
+import Events from "../Components/Events"; 
+import Calendar from "../Components/Calendar";
+import styled from "styled-components";
 
+const StyledWrapper = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+min-width: 100vw;
+background-color: #e42f2b;
+
+`;
 
 function Dash(props) {
+    return (
+        <StyledWrapper>
 
-  const {readCheckins,readCheckinComments, user, writeCheckinComments, readChallenges } = props;
-  const [checkins, setCheckins] = useState([]);
+        <div>
+        <br></br>
+              <Events></Events>
+              <br></br>
+              <Calendar></Calendar>
+        </div>
 
-  useEffect(() => {
-    const getAllCheckins = async () => {
-      let ci = [];
-      const allCheckinRef = await readCheckins(); 
-      allCheckinRef.forEach(checkin => ci.push({...checkin.data(),...{id:checkin.id}}));
-      setCheckins(ci);
-    }
 
-    getAllCheckins();
+        </StyledWrapper>
 
-  }, [setCheckins, readCheckins])
-
-  return (
-    <div>
-      <DaysCompleted days={15} readChallenges={readChallenges}   checkins={checkins}>
-        {" "}
-      </DaysCompleted>
-       {
-         checkins.map( c =>  <CheckinComment user={user} checkin={c}  writeCheckinComments={writeCheckinComments} readCheckinComments={readCheckinComments} /> )
-       }
-
-     
-    </div>
-  );
+    )
 }
 
-Dash.propTypes = {
-    user: PropTypes.object.isRequired,
-    checkins: PropTypes.array.isRequired,
-    readCheckins : PropTypes.array.isRequired,
-    writeCheckinComments: PropTypes.array.isRequired,
-    readCheckinComments: PropTypes.object.isRequired,
-    readChallenges: PropTypes.object.isRequired
-};
+export default Dash
 
-export default Dash;
+
 
 

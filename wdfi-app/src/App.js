@@ -8,7 +8,6 @@ import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 
 import Dash from "./Views/Dash";
 import Join from "./Views/Join";
-import Checkin from "./Views/Checkin";
 import Profile from "./Views/Profile";
 import Login from "./Views/Login";
 import CalendarHome from "./Views/CalendarHome";
@@ -149,9 +148,6 @@ function App() {
             </RedirectToDash>
             <Protected authenticated={isAuthenticated} path="/profile">
               <Profile user={user} />
-            </Protected>
-            <Protected authenticated={isAuthenticated} path="/checkin">
-              <Checkin createCheckin={createCheckin} user={user} />
             </Protected>
             <Protected authenticated={isAuthenticated} path="/calendarhome">
               <CalendarHome createCheckin={createCheckin} user={user} />

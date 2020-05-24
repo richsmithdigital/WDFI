@@ -32,6 +32,7 @@ box-shadow: 10px 5px 5px #000;
 const StyledHeading = styled.h1`
 text-align: center;
 margin-top: 2%;
+cursor:"pointer";
 color: ${({ theme }) => theme.colors.red};
 `;
 const StyledLink = styled(Link)`

@@ -8,6 +8,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 min-width: 100vw;
+min-height: 100vh;
+
 background-color: #e42f2b;
 
 `;
@@ -20,7 +22,6 @@ function Schedule(props) {
         <br></br>
               <Events></Events>
               <br></br>
-              <Calendar></Calendar>
         </div>
 
 

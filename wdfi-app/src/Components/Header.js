@@ -59,10 +59,6 @@ function Menu(props) {
             {" "}
             <Link to="/profile"> Profile </Link>{" "}
           </StyledLi>
-          <StyledLi active={location.pathname === "/checkin"}>
-            {" "}
-            <Link to="/checkin"> Checkin </Link>{" "}
-          </StyledLi>
           <StyledLi active={location.pathname === "/CalendarHome"}>
             {" "}
             <Link to="/CalendarHome"> Calendar </Link>{" "}
@@ -126,11 +122,7 @@ left: 0;
 
 const StyledWrapper = styled.div`
 width: 100%;
-background: linear-gradient(
-  180deg,
-  ${({ theme }) => theme.colors.lightPurple} 0%,
-  ${({ theme }) => theme.colors.purple} 100%
-);
+background: darkred;
 height: 50px;
 display: flex;
 justify-content: space-between;
