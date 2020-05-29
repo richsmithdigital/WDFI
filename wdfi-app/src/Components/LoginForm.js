@@ -16,9 +16,8 @@ const StyledHeading = styled.h2`
   const StyledSocialIconArea = styled.div`
     display: flex;
     justify-content: space-around;
-    a: {
-      cursor: pointer;
-    }
+    cursor: pointer;
+  
   `;
 
 

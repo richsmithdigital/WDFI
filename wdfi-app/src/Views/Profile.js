@@ -19,11 +19,9 @@ function Profile(props) {
 
 
   return (
-    
 
     <StyledWrapper>
       <br></br>
-
      <br></br>
       <div>
     <ImageUpload></ImageUpload>
