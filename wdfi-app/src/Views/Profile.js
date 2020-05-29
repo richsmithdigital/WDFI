@@ -5,7 +5,6 @@ import ImageUpload from "../Components/ImageUpload";
 import styled from "styled-components";
 import ProfileInfo from "../Components/ProfileInfo";
 
-
 const StyledWrapper = styled.div`
 justify-content: center;
 align: center;
