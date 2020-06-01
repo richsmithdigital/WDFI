@@ -67,6 +67,10 @@ function Menu(props) {
           {" "}
             <Link to="/Schedule"> Schedule </Link>{" "}
           </StyledLi>
+          <StyledLi active={location.pathname === "/Map"}>
+          {" "}
+            <Link to="/Map"> Map </Link>{" "}
+          </StyledLi>
         </ul>
       </StyledNav>
     </div>
@@ -94,6 +98,7 @@ hr {
 
 const StyledUserAvatar = styled.div`
 color: ${({ theme }) => theme.colors.darkShade[50]};
+text-color: yellow;
 display: flex;
 width: 80%;
 align-items: center;
