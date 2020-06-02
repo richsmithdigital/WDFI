@@ -8,7 +8,6 @@ import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 
 import Dash from "./Views/Dash";
 import Join from "./Views/Join";
-import Profile from "./Views/Profile";
 import Login from "./Views/Login";
 import CalendarHome from "./Views/CalendarHome";
 import Schedule from "./Views/Schedule";
@@ -130,11 +129,6 @@ function App() {
               }   readCheckinComments={readCheckinComments}  user={user} readCheckins={readCheckins }  />
             </Protected>
             <RedirectToDash authenticated={isAuthenticated} path="/join">
-              {/**
-               * I have set up these loaders to handle the social sign-in redirect
-               * which redirects back to the page you initiated it from
-               * as such we only want to show the page after the redirect has authenticated
-               */}
 
               <Join
                 signInWithProvider={signInWithProvider}
@@ -147,9 +141,6 @@ function App() {
                 signInEmailUser={signInEmailUser}
               />
             </RedirectToDash>
-            <Protected authenticated={isAuthenticated} path="/profile">
-              <Profile user={user} />
-            </Protected>
             <Protected authenticated={isAuthenticated} path="/calendarhome">
               <CalendarHome createCheckin={createCheckin} user={user} />
             </Protected>

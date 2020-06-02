@@ -55,10 +55,6 @@ function Menu(props) {
             {" "}
             <Link to="/"> Dash </Link>{" "}
           </StyledLi>
-          <StyledLi active={location.pathname === "/profile"}>
-            {" "}
-            <Link to="/profile"> Profile </Link>{" "}
-          </StyledLi>
           <StyledLi active={location.pathname === "/CalendarHome"}>
             {" "}
             <Link to="/CalendarHome"> Calendar </Link>{" "}
