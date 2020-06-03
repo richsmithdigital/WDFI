@@ -9,7 +9,7 @@ class MapComponent extends Component {
   static defaultProps = {
     center: {
       lat: 50.9087,
-      lng: 1.4012
+      lng: -1.4012
     },
     zoom: 18
   };
@@ -25,7 +25,7 @@ class MapComponent extends Component {
         >
           <AnyReactComponent
             lat={50.9087}
-            lng={1.40120}
+            lng={-1.4012}
             text="My Marker"
           />
         </GoogleMapReact>

@@ -17,9 +17,12 @@ function Map(props) {
         <StyledWrapper>
 
         <div>
+        <br></br>
+
             <MapComponent></MapComponent>
             <br></br>
             <MapComponent2></MapComponent2>
+            <br></br>
 
         </div>
         </StyledWrapper>
