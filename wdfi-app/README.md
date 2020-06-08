@@ -1,18 +1,43 @@
-# Running Instruction
+Solent Smart Calendar
 
-1. Update `src/config/firebase.js` to your own projects config settings
-2. Install your the latest project dependencies - `npm install` 
-3. Run the project - `npm run start`
+Solent calendar is a react based prototype smart calendar app designed to make students life easier at Solent University. Solent's industry partners Dootrix, a leading mobile app developer, proposed our team with finding a modern solution with a single page web application to solve a problem students are currently facing. 
+The first task was to identify a problem students face a propose a solution which is documented here. With this complete, I have made a high-fidelity prototype which can be viewed below and interacted with here. With this done the prototype is built and the process documented in the rest of this readme file.
 
 
-## Setting up authentication 
+The app is designed to display critical information for a students day to day life, including there classes/timetable and deadlines. Solent university currently runs mostly of Microsoft for its software solutions including authentication and emails; however, it also uses a product called CMISGo a university-specific solution for timetable and room booking needs. Due to CMISGo being a paid product and my self not having access to the products Rest API. Most of Microsoft's Azure backend and cloud solutions are also stuck behind a paywall for many features; so a different backend will need to be chosen.
 
-For this application to work you will need to ensure, one or more, authentication methods are set up. Click authentication from within your firebase application dash.
 
-## Email & Google 
 
-Enable Email & Google authentication, this is quick and easy and involves no external configuration. 
+Project Methodology 
+For managing any small or large scale project, it is essential to use a methodology to help keep you and or your team organised and on track. For this project, I chose to use the waterfall methodology, the waterfall is a linear based methodology and as suggested flows down like a waterfall in critical phases. The first phase for this project was the conception phase this encluded taking the brief from Dootrix and using the design thinking methodology to help define the problem and come up with a solution. A prototype was then made and presented to the target audience for feedback, this feedback was taken, and prototyping was able to begin.
+Why Firebase?
+I chose to use Googles Firebase mobile and web back end solution, Firebase is hugely popular right now and has been picked for its ease of use range of built-in features including hosting authentication and real-time database.  It also integrates very well with the Google Console and other Google API's such as Maps and Callendar. One of the significant advantages of Firebase is pricing; everything is effectively free for small apps, and no features are hidden behind a paywall. Unlike Microsoft's Azure, although Azure is much more powerful with its AI and broader feature set. With Firebase, its pricing is based around scalability with users only need to pay for features once an app gets more extensive and more requests are made. For this app, we will be using a few of there main features, including authentication real-time database/storage, hosting with options to use the Functions feature in the future. Due to not having access to the real university system, this app will create equivalent dummy systems using a mix of Gooogle API's Calendar, Maps and Events 
+Why react?
+For this project, I chose to use React JS a Javascript library built and maintained by Facebook. React is a component-based library which can be summed up as you build each part of the app in building blocks, for example, the header, nav menu and text information all exist as separate components, and the app renders them when needed to make a user interface.
+ 
+Source: Edureka
+There are a few other popular javascript libraries I could have used such as Angular; however, I chose React for several reasons. The first would be its excellent built-in state object, state allows the component to hold and re-render information dynamically on the client-side. Second React is the most popular framework at the time of writing; this has advantages such as lots of support and documentation and an ever-growing package library with NPM allowing features to be added with ease.
 
-## Facebook authentication
+Building the App
+Set up
+To make set up a lot easier, I started with the create react app an official node package from Facebook designed to make set up quick from NPM (node package manager), once this is done I run the command npm run start in the project directory to run a localhost development server. I will also use a few tools to make development a little easier, React developer tools is a chrome/edge plugin that gives the developer a breakdown of the app structure and other useful tools such as state. I will also use ES7 in VS code, a plugin that gives snippets to several libraries making development quicker, by auto-completing code, for example, making a new blank react component with shortcuts. 
 
-To enable Facebook authentication you need to set up an external Facebook application. [I have provided a video on how to do this](https://www.youtube.com/watch?v=9ztk1hKmcI0&t=17s), as the gogle documentation seemed patchy.
+Once this is done, I delete most of the boilerplate like images and stock CSS, I then organise my folder structure, create react app gets the basic done for you but is not optimised well for multiple components. I add an assets folder for my assets in the project like images and animations. I then add a config folder for files that connect to other sauces like API configs and Firebase as well for styling. I also set up a services folder specific for Firebase backend management. Finally, I set up views and components, components would hold all the individual components with the exception of the components in views, with views acting like individual web pages in React.
+
+
+
+Writing the Code
+Okay with all that out of the way, I can begin to write some code. So I'm going to start with the Schedular using Googles Calendar API. First I need to go to the Google console find the API and get a unique API key to communicate with the service, it is worth noting you do need to set up an app in the Google console before you can get this API key. I then create a file called API config in the config folder and place the API key in there. Next, I go to Google calendar select the calendar I want to sync go into settings make sure it is set to public and get the Calendars unique ID, I place this in the config file. I declare the variables to call them to other components when needed.
+ 
+To build the component, we need to follow a structure almost like a chain of command for the components. APP.js the file that is rendered in the HTML and is basically at the top of the structure, this will hold the styling components that are constant on all views (pages) such as the header and footer, it will also render all the views, and other vital components I will cover later. I will create my first view component called Schedule and import it into App.js, next I will create an Events component in the components file which I will import into the schedule view. In this component, I'm going to need import and or install a few extra dependencies; Moment for managing dates in the browser and the GAPI library, Googles API client library for javascript.  
+I next create a variable called events, set up state with in it as well as time using moment. The next function I will want to be called when the rest of the app has rendered to do this, I will set the compoentDidMount property to run at a set interval. Then define a start function calling the event, that function uses gapi to call the API key and using my unique calendar id in the API rest URL  and will initialise the javascript client. I then need to return the event taking the rest URL using the end pint of .events which will fetch all events from the calendar. 
+To make my app more dynamic, I declare a state variable using an if-else statement to change the state, I then set the response for the sate. I do this with three different values of state busy, loading and empty. I then render the response first the moment time and date functions then responses to the different versions of state. Rendering an image and test response if there are no events, a custom loading image while the API is being called and the events detailed, and an image displayed if there is an event coming up. After this I render a list of upcoming up events if there are any and add a link for users to add there own event with a simple link to the Google calendar. It is worth noting I could use the Calendar API using the events. Insert method but left it out for this demo.
+
+
+
+
+
+With the first component working, I will begin to style and structure the app, to do this im going to use styled-components – installation is not as straight forward as some but documentation can be found here. Styled components allow you to use CSS and JS without relying on Class names which can cause errors and clashes, and it just helps keeps CSS separate and straightforward. I style my component using a separate tile component using a subtle floating effect with shadows. I then set my global styles, and a theme component places inside the config file.  With this done, I build the header creating a new component called header and rendering it in the main app.js file, using an on click function for a sliding menu linking to all my views, with a filer user info that I will add in later.
+I then create a component for the calendar directly importing the calendar from Google with a little styling, with this I add a calendar.view and render it. In the main app. Now I build my main dashboard/home, which renders both the maps and events components to give the students the most direct information. 
+Auth with firebase
+

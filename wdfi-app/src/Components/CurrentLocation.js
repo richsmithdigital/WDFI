@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -49,13 +48,11 @@ export class CurrentLocation extends React.Component {
 
   loadMap() {
     if (this.props && this.props.google) {
-      // checks if google is available
       const { google } = this.props;
       const maps = google.maps;
 
       const mapRef = this.refs.map;
 
-      // reference to the actual DOM element
       const node = ReactDOM.findDOMNode(mapRef);
 
       let { zoom } = this.props;
@@ -68,7 +65,6 @@ export class CurrentLocation extends React.Component {
           zoom: zoom
         }
       );
-      // maps.Map() is constructor that instantiates the map
       this.map = new maps.Map(node, mapConfig);
     }
   }

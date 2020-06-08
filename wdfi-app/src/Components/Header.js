@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import avatarLarge from "../assets/avatar_large.png";
 import avatarPlaceholder from "../assets/avatar_placeholder.png";
-
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 
 
@@ -159,7 +154,6 @@ function Header(props) {
           <hr />
         </StyledBurgerMenu>
         <StyledUserAvatar>
-          {/* <FontAwesomeIcon style={{ fontSize: "16px" }} icon={faChevronDown} /> */}
           <h6> {user.email}  <span style={{textDecoration: "underline", cursor:"pointer"}} onClick={handleSignOutClick}> (logout) </span></h6>
           <img src={user.photoURL || avatarPlaceholder} alt="avatar" />
         </StyledUserAvatar>

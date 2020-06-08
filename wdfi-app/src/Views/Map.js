@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import MapComponent from "../Components/MapComponent"
-import MapComponent2 from "../Components/MapComponent2"
 
 const StyledWrapper = styled.div`
 justify-content: center;
@@ -16,8 +15,7 @@ function Map(props) {
     return (
         <StyledWrapper>
         <div>
-        <br></br>
-            <MapComponent2></MapComponent2>
+            <MapComponent></MapComponent>
             <br></br>
         </div>
         </StyledWrapper>
