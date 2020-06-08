@@ -15,22 +15,15 @@ background-color: #e42f2b;
 function Map(props) {
     return (
         <StyledWrapper>
-
         <div>
         <br></br>
-
-            <MapComponent></MapComponent>
-            <br></br>
             <MapComponent2></MapComponent2>
             <br></br>
-
         </div>
         </StyledWrapper>
 
-
     )
 }
-
 
 export default Map
 
