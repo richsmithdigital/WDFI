@@ -5,7 +5,7 @@ import MapComponent from "../Components/MapComponent"
 const StyledWrapper = styled.div`
 justify-content: center;
 align-items: center;
-width: 800px
+width: 900px
 min-height: 100vh;
 background-color: #e42f2b;
 
