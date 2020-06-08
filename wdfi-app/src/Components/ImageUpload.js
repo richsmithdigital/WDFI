@@ -40,18 +40,15 @@ class ImageUpload extends Component {
     uploadTask.on(
       "state_changed",
       snapshot => {
-        // progress function ...
         const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
         this.setState({ progress });
       },
       error => {
-        // Error function ...
         console.log(error);
       },
       () => {
-        // complete function ...
         storage
           .ref("images")
           .child(image.name)
