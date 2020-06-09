@@ -85,7 +85,7 @@ The results showed that the functionality showed good promise, 80% said they wou
 The last question simply asked would they prefer this to the current calendar, with only 30% saying yes and 50% undecided. I do believe that finishing the functionality and improving the design closer to the prototype would significantly improve those numbers.
 
 **Finished Product**
-http://richsmithdigital.com/login
+http://richsmithdigital.com/
 
 **Survey Results**
 
